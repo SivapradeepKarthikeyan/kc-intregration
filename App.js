@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import 'react-native-gesture-handler';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { AppProvider, useAppContext } from './AppContext';
+import AppWrapper from './AppWrapper';
+
+
+
+//Navigation
+const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+//const { openRoutes, setOpenRoutes } = useAppContext();
+
 
 export default function App() {
+
+  const [openRoutes, setOpenRoutes] = useState(false);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AppProvider>
+      <AppWrapper />
+    </AppProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },

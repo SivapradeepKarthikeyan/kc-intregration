@@ -3,8 +3,12 @@
     "name": "tb",
     "slug": "tb",
     "version": "1.0.0",
+    "scheme": "tb",
     "assetBundlePatterns": [
       "**/*"
+    ],
+    "plugins": [
+      "expo-font"
     ]
   }
 }
