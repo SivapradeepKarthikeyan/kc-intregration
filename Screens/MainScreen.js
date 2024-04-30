@@ -55,7 +55,7 @@ export default function MainScreen() {
                             longitude: e.coords.longitude.toFixed(6)
                         }
                         console.log("Validating with keycloak ->", body);
-                        const locationResponse = await axios.post('http://192.168.0.115:8080/auth/realms/we-trade/users/userlocation', body)
+                        const locationResponse = await axios.post('http://192.168.29.149:8080/auth/realms/we-trade/users/userlocation', body)
                         console.log("Location response", locationResponse.data)
                         if (locationResponse.data.status_code == 200) {
                             setIsButtonDisabled(false)
